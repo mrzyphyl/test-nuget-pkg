@@ -16,6 +16,9 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# GitHub
+.github/
+
 # Visual Studio files
 .vs/
 *.suo
