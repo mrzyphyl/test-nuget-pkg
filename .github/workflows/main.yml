@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
 
     steps:
     - uses: actions/checkout@v4
@@ -21,10 +24,8 @@ jobs:
     - name: Test
       run: dotnet test --configuration Release --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack --configuration Release --no-restore -p:PackageVersion=1.0.0-dev
-    - name: Publish to NuGet
-      run: |
-        echo "//registry.npmjs.org/:_authToken=${{ secrets.NUGET_TOKEN }}" > ~/.nuget/NuGet/NuGet.Config
-        dotnet nuget push bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json
+      run: dotnet pack --configuration Release --no-restore -p:PackageVersion=1.0.0
+    - name: Publish to GitHub Packages
+      run: dotnet nuget push bin/Release/*.nupkg --source https://nuget.pkg.github.com/ --skip-duplicate
       env:
-        NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
