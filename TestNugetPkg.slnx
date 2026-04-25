@@ -1,8 +1,8 @@
 <Solution>
   <Folder Name="/src/">
-    <Project Path="TestNugetPkg.Core/TestNugetPkg.Core.csproj" Id="16eb2e86-7eca-4cf2-99e0-1c099445cbd2" />
+    <Project Path="src/TestNugetPkg.Core/TestNugetPkg.Core.csproj" Id="16eb2e86-7eca-4cf2-99e0-1c099445cbd2" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="TestNugetPkg.Tests/TestNugetPkg.Tests.csproj" Id="72757e0c-f1eb-42cf-905f-8acc2f9358a2" />
+    <Project Path="tests/TestNugetPkg.Tests/TestNugetPkg.Tests.csproj" Id="72757e0c-f1eb-42cf-905f-8acc2f9358a2" />
   </Folder>
 </Solution>
